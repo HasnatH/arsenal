@@ -1,5 +1,7 @@
 <?php
 
+//fill in the fields if there is data already entered before
+//for user help
 if(isset($_GET['firstname']))
 {
 $fname = $_GET['firstname'];
@@ -38,11 +40,14 @@ $jtitle = "";
 }
 
 ?>
+<!--messages displayed if set-->
 <div id="fademsg">
 <center><label id="msg"><b><?php if(isset($empdel)){echo "Employee deleted.";} ?></b></label>
 <label id="msg"><b><?php if(isset($nosearch)){echo "Please enter at least one field to search.";} ?></b></label>
 </center>
 </div>
+
+<!--search form sends using ajax get method-->
 <div id="search_form">
 <form id="searchquery" method="GET" action="<?php echo base_url()."index.php/find/findemp"?>">
 <table valign="middle" align="center" id="tablesearch">
@@ -84,5 +89,7 @@ $jtitle = "";
 </form>
 </div>
 <hr/>
+<!--div to show the number of results and searching message-->
 <div class="countSearch"></div>
+<!--div to show the results-->
 <div class="showresults"></div>

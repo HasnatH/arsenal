@@ -10,12 +10,13 @@ class Find extends CI_Controller
 	
 	}
 	
+	//to check if user is logged in
 	public function is_logged_in()
 	{
 		$is_logged_in = $this->session->userdata('is_logged_in');	
 	}
 	
-
+	//index function loads home page
 	public function index()
 	{	
 		$data['is_logged_in'] =  $this->session->userdata('is_logged_in');
@@ -23,6 +24,7 @@ class Find extends CI_Controller
 		$this->load->view('includes/template' , $data);	
 	}
 	
+	//load search form
 	public function searchform()
 	{	
 		$data['is_logged_in'] =  $this->session->userdata('is_logged_in');
@@ -30,6 +32,7 @@ class Find extends CI_Controller
 		$this->load->view('includes/template' , $data);	
 	}
 	
+	//load help page
 	public function help()
 	{	
 		$data['is_logged_in'] =  $this->session->userdata('is_logged_in');
@@ -37,21 +40,25 @@ class Find extends CI_Controller
 		$this->load->view('includes/template' , $data);	
 	}
 	
+	//findemp function does search query
 	public function findemp($sort_by = "emp_no" , $sort_order = "asc", $offset = 0)
 	{	
 		$limit = 20;
 		
+		//check cookie to see if logged in
 		$is_logged_in = $this->session->userdata('is_logged_in');
 		$username = $this->session->userdata('username');
 		
 	
-		
+		//get data from the search form 
 		$firstname = $this->input->get("firstname");
 		$lastname = $this->input->get("lastname");
 		$dept = $this->input->get("dept");
 		$jobtitle = $this->input->get("jobtitle");
 		
-		
+		//check if there is at least one search parameter
+		//if none take back to search form page
+		//display msg that says to enter at least one search parameter
 		if( (($firstname == "" || $firstname == null)) && 
 			(($lastname == "" || $lastname == null)) &&
 			(($dept == "" || $dept == null)) &&
@@ -64,14 +71,16 @@ class Find extends CI_Controller
 			
 			
 		}
+		//if there is a t least 1 parameter search 
 		else
 		{
-			
+			//use this model
 		$this->load->model('find_model');
 
+		//get search results
 		$results = $this->find_model->queries($is_logged_in, $firstname, $lastname, $dept, $jobtitle, $limit, $offset,$sort_by, $sort_order);
 		if($is_logged_in == "1" || $is_logged_in == "is_logged_in")
-		{
+		{//different search results depending on user
 		$jsonresults = $this->find_model->searchHRQ($firstname, $lastname, $dept, $jobtitle);
 		}
 		else
@@ -93,13 +102,14 @@ class Find extends CI_Controller
 		$data2['results'] = $jsonresults['rows'];
 	
 
-	
+		//echo in json format
 		echo json_encode($data2);
 		//$this->load->view('includes/template' ,$data);
 		}	
 		
 	}
 	
+	//load add page
 	public function add()
 	{	
 		$data['is_logged_in'] =  $this->session->userdata('is_logged_in');
@@ -107,10 +117,12 @@ class Find extends CI_Controller
 		$this->load->view('includes/template' , $data);	
 	}
 	
+	//add employee with data given
 	public function addemp()
 	{
 		$data['is_logged_in'] =  $this->session->userdata('is_logged_in');
 		
+		//get data from from
 		$dateofbirth = $this->input->get("dateofbirth");
 		$firstname = $this->input->get("firstname");
 		$lastname = $this->input->get("lastname");
@@ -121,6 +133,7 @@ class Find extends CI_Controller
 		$title = $this->input->get("title");
 		$deptmgr = $this->input->get('deptmgr');
 		
+		//load model and add employee
 		$this->load->model('find_model');
 		$q = $this->find_model->addEmployee($dateofbirth, $firstname, $lastname, $gender, $hiredate, $salary, $department, $deptmgr, $title);
 		
@@ -132,6 +145,7 @@ class Find extends CI_Controller
 		}
 	}
 	
+	//load delete page
 	public function delete()
 	{
 		$emp_no = $this->input->get('emp_no');
@@ -147,6 +161,7 @@ class Find extends CI_Controller
 		$this->load->view('includes/template' , $data);	
 	}
 	
+	//delete the employee from each of the tables
 	public function deleteemp()
 	{
 		$data['is_logged_in'] =  $this->session->userdata('is_logged_in');
@@ -165,6 +180,7 @@ class Find extends CI_Controller
 		$this->find_model->deleteFromSalariesTable($emp_no);
 		$this->find_model->deleteFromTitlesTable($emp_no);
 		
+		//take user back to search page with message confirming deletion
 		$data['res'] = $res;
 		$data['main_content'] = 'searchform';	
 		$data['empdel'] = "yes";
@@ -172,10 +188,14 @@ class Find extends CI_Controller
 		
 	}
 	
+	//load edit page
 	public function edit()
 	{
 		$emp_no = $this->input->get("emp_no");
 		
+		//if user choose edit page via the search result or from the nav bar
+		//if no emp_no is sent the it is from navbar
+		//take to another edit page where user enters a emp_no
 		if($emp_no == "" || $emp_no == null)
 		{
 			$data['is_logged_in'] =  $this->session->userdata('is_logged_in');
@@ -183,12 +203,15 @@ class Find extends CI_Controller
 			$this->load->view('includes/template' , $data);	
 		}
 		else
-		{		
+		{	
+		//retrieve the user data to display in already filled out form to edit user
 		$this->load->model('find_model');
 		$results = $this->find_model->retrieve($emp_no);	
 		$data['found'] = $results['num_rows'];
 		if($data['found'] == 0)
 		{
+		//if no results are found using the emp_no given, then user doesnt exist
+		//emp_no given is wrong, asks user for a correct emp_no
 			$data['is_logged_in'] =  $this->session->userdata('is_logged_in');
 			$data['main_content'] = 'edit2';	
 			$this->load->view('includes/template' , $data);	
@@ -196,6 +219,7 @@ class Find extends CI_Controller
 		}
 		else
 		{
+		//update the user data in all the tables
 		$data['emp_no'] = $emp_no;
 		$data['fields'] = $results['fields'];
 		$data['employees'] = $results['rows'];
@@ -215,6 +239,7 @@ class Find extends CI_Controller
 		$data['deptField'] = $result5['deptField'];
 		$data['department'] = $result5['dept'];
 		
+		//load the edit page again showing the updated data
 		$data['is_logged_in'] =  $this->session->userdata('is_logged_in');
 		$data['main_content'] = 'edit';	
 		$this->load->view('includes/template' , $data);	
@@ -222,6 +247,9 @@ class Find extends CI_Controller
 		}
 	}
 	
+	//check for changes using old employee data and data changed by user
+	//if there are any changes for any field, update the data
+	//unchanged data is kept the same
 	public function updateemp()
 	{
 		$data['is_logged_in'] =  $this->session->userdata('is_logged_in');
@@ -276,6 +304,7 @@ class Find extends CI_Controller
 			}
 		}
 		
+		//once updated, load the edit page with the updated results in place and updated message
 		$data['empupdate'] = "yes";
 		$results = $this->find_model->retrieve($emp_no);
 		$data['emp_no'] = $emp_no;

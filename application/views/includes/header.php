@@ -1,3 +1,5 @@
+<!--header page for normal users not logged in-->
+<!--contains the nav bar and login button-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,11 +7,14 @@
 	<title></title>
 	<link rel="stylesheet" type="text/css" href="/w1294947/css/style.css">
 	<script src="http://code.jquery.com/jquery-1.8.3.js"></script>
+  <!--load jquery script so jquery functions work-->
   <script src="<?php echo base_url() ?>css/jquery.js"></script>
+  <!--global.js is where the json_encode is catched and displayed how i want-->
   <script src="<?php echo base_url() ?>css/global.js"></script>
 </head>
 <body>
 
+<!--depending on what the main_content is load the page -->
 <?php 
 switch ($main_content)
 {

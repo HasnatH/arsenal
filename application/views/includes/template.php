@@ -1,4 +1,4 @@
-
+<!--template page builds up the views depending on if logged in and what page to load-->
 <?php 
 if($is_logged_in == "1" || $is_logged_in == "is_logged_in")
 	{

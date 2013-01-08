@@ -1,7 +1,9 @@
+<!--messages displayed if needed to be displayed-->
 <div id="fademsg">
 <center><label id="msg"><b><?php if(isset($empadd)){echo "Employee added.";} ?></b></label></center>
 </div>
 
+<!--tab display to show the fields to enter to add new employee-->
 <table valign="middle" align="center">
 <tr>
 <td width="20px"></td>
@@ -11,6 +13,7 @@
 </tr>
 
 </table>
+<!--add form -->
 <div id="add_form">
 <form id="addemp" method="GET" action="http://www.ecwm604.us/w1294947/index.php/find/addemp">
 

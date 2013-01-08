@@ -1,7 +1,10 @@
+<!--show messages if it is set-->
 <input type="hidden" id="base_url" value="<?php echo base_url();?>"/>
 <div id="fademsg">
 <center><label id="msg"><b><?php if(isset($empupdate)){echo "Employee details updated.";} ?></b></label>
 </center>
+
+<!--fill in the fields using the data of the user retrieved -->
 </div>
 <?php 
 
@@ -49,6 +52,7 @@ foreach($department as $depts)
 </tr>
 
 </table>
+<!--display the results here-->
 <div id="add_form">
 <form id="deleteemp" method="GET" action="<?php echo base_url()."index.php/find/updateemp"?>">
 

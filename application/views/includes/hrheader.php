@@ -1,3 +1,4 @@
+<!--the header for HR page containing extra features in nav bar and logout button-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,13 +9,16 @@
 	<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
   <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+    <!--load jquery script so jquery functions work-->
   <script src="<?php echo base_url() ?>css/jquery.js"></script>
+    <!--global.js is where the json_encode is catched and displayed how i want-->
   <script src="<?php echo base_url() ?>css/global.js"></script>
   
   <link rel="stylesheet" href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css" />
     <script src="http://code.jquery.com/jquery-1.8.3.js"></script>
     <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
     
+	<!--jquery used in add and edit page to display info the way i want it to-->
 <script type="text/javascript">
 $(document).ready(function(){
 
@@ -62,7 +66,7 @@ document.getElementById("oth").style.fontWeight = 'lighter';
 
 </head>
 <body>
-
+<!--load the page depending on what the main_content is -->
 <?php 
 switch ($main_content)
 {

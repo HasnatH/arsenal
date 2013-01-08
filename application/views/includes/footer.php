@@ -1,3 +1,4 @@
+<!--footer page at the bottom at every page-->
 <br/>
 <br/>
 <p><hr/>

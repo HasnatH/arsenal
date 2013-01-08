@@ -1,3 +1,4 @@
+<!--home page-->
 <div id="home_form">
 <h2>Welcome to the ECWM604 Home Page. </h2>
 <br/>

@@ -1,3 +1,5 @@
+<!--show the data of the employee to be deleted-->
+
 <?php
 foreach($employees as $employee)
 {	
@@ -10,6 +12,7 @@ foreach($employees as $employee)
 
 
 ?>
+<!--confirmation to delete a user-->
 <div id="delete_form">
 <form id="deleteemp" method="GET" action="<?php echo base_url()."index.php/find/deleteemp"?>">
 

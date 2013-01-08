@@ -1,3 +1,4 @@
+<!--help page-->
 <div id="help_form">
 <h2>Welcome to the ECWM604 Help Page. </h2>
 <br/>
