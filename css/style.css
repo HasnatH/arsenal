@@ -1,0 +1,363 @@
+body {
+	background: #C0C0C0C0;
+	margin: 0;
+	padding: 0;
+	font-family: verdana;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+#search_form, #add_form, #edit_form, #home_form, #help_form, #delete_form{
+	width: 100%;
+	background: #f0f0f0;
+	border: 1px solid white;
+		margin-right: auto;
+	margin-left: auto;
+	padding: 1em;
+
+	-moz-border-radius: 1px;
+
+	-webkit-border-radius: 1px;
+
+}
+
+#headers{
+	width: 100%;
+	background: #58FAAC;
+	margin-right: auto;
+	margin-left: auto;
+	padding: 1em;
+border: 1px solid white;
+	
+	-moz-border-radius: 1px;
+
+	-webkit-border-radius: 1px;
+
+}
+#login_form{
+	width: 300px;
+	background: #f0f0f0;
+	border: 1px solid white;
+	margin: 50px auto 0;
+	padding: 1em;
+
+	-moz-border-radius: 3px;
+
+	-webkit-border-radius: 3px;
+}
+
+h1, h2, h3, h4, h5{
+	margin-top: 0;
+	font-family: verdana;
+	text-align: center;
+	color: 000080;
+}
+
+#username, #password{
+	display: block;
+	margin: 0 0 1em 0;
+	width: 280px;
+	height: auto;
+	-moz-border-radius: 1px;
+	-webkit-border-radius: 1px;
+	
+}
+
+#dept, #jobtitle, #gender{
+height: auto;
+width: 160px;
+display: block;
+}
+
+#login, #loginh, #logouth, #search, #edit, #delete, #edit2, #cancel,#add, #searchHR, button
+{
+	-moz-box-shadow:inset 0px 1px 0px 0px #947c94;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #947c94;
+	box-shadow:inset 0px 1px 0px 0px #947c94;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #d4b4d4), color-stop(1, #613361) );
+	background:-moz-linear-gradient( center top, #d4b4d4 5%, #613361 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#d4b4d4', endColorstr='#613361');
+	background-color:#d4b4d4;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	border:1px solid #a824a8;
+	display:inline-block;
+	color:#ffffff;
+	font-family:Verdana;
+	font-size:15px;
+	font-weight:normal;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:1px 1px 0px #571657;
+}
+#login:hover, #loginh:hover, #logouth:hover, #search:hover, #add:hover, #searchHR:hover, button:hover, #edit:hover, #delete:hover, #edit2:hover, #cancel:hover
+{
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #613361), color-stop(1, #d4b4d4) );
+	background:-moz-linear-gradient( center top, #613361 5%, #d4b4d4 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#613361', endColorstr='#d4b4d4');
+	background-color:#613361;
+	cursor: pointer;
+}
+
+#login:active, #loginh:active, #logouth:active, #search:active, #add:active, #searchHR:active,button:active, #edit:active, #delete:active, #cancel:active, #edit2:active
+{
+	position:relative;
+	top:1px;
+}
+.error{
+color: #393939;
+font-size: 15px;
+}
+
+h1 {
+text-shadow: 0 1px 0 white;
+	margin-right: auto;
+	margin-left: auto;
+	color: 000080;
+}
+
+	
+h5 {
+
+margin-right: auto;
+	margin-left: auto;
+}
+
+
+
+
+
+#sess {
+    position: absolute;
+    top: 0%;
+    right: 0%;
+	padding: 10px;
+}
+
+
+
+
+
+#cssmenuHomeR ul{
+	margin-right: auto;
+	margin-left: auto;
+	padding:0;
+	border:1px solid #000000;
+	list-style-type:none;
+	position:relative;
+	display:block;
+	height:40px;
+	width:391px;
+	text-transform:uppercase;
+	font-size:13px;
+	
+
+	-moz-box-shadow:inset 0px 1px 0px 0px #947c94;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #947c94;
+	box-shadow:inset 0px 1px 0px 0px #947c94;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #d4b4d4), color-stop(1, #613361) );
+	background:-moz-linear-gradient( center top, #d4b4d4 5%, #613361 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#d4b4d4', endColorstr='#613361');
+	background-color:#d4b4d4;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	border:1px solid #a824a8;
+	
+	color:#ffffff;
+}
+	
+#cssmenuHomeR li
+{
+	display:block;
+	float:left;
+	margin-right: auto;
+	margin-left: auto;
+	padding:0;
+	border-right:1px solid #ffffff;
+}
+	
+#cssmenuHomeR li a
+{
+	display:block;
+	float:left;
+	color:#000080;
+	text-decoration:none;
+	padding:12px 20px 0 20px;
+
+	height:40px;
+}
+#cssmenuHomeR li a:hover
+{
+	background:transparent url('images/fade.jpg') repeat-x top left;
+	
+}
+
+
+#cssmenu2 ul
+{
+	margin-right: auto;
+	margin-left: auto;
+	padding:0;
+	border:1px solid #000000;
+	list-style-type:none;
+	position:relative;
+	display:block;
+	height:40px;
+	width:251px;
+	text-transform:uppercase;
+	font-size:13px;
+	
+
+	-moz-box-shadow:inset 0px 1px 0px 0px #947c94;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #947c94;
+	box-shadow:inset 0px 1px 0px 0px #947c94;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #d4b4d4), color-stop(1, #613361) );
+	background:-moz-linear-gradient( center top, #d4b4d4 5%, #613361 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#d4b4d4', endColorstr='#613361');
+	background-color:#d4b4d4;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	border:1px solid #a824a8;
+	
+	color:#ffffff;
+}
+	
+#cssmenu2 li{
+	display:block;
+	float:left;
+	margin-right: auto;
+	margin-left: auto;
+	padding:0;
+	border-right:1px solid #ffffff;
+	}
+	
+#cssmenu2 li a{
+	display:block;
+	float:left;
+	color:#000080;
+	text-decoration:none;
+	padding:12px 20px 0 20px;
+	height:24px;
+	height:40px;
+	}
+#cssmenu2 li a:hover
+{
+	background:transparent url('images/fade.jpg') repeat-x top left;	
+}
+
+
+
+
+
+
+
+
+#hovertableHR {
+	margin-left: auto;
+	margin-right: auto;
+	font-family: verdana,arial,sans-serif;
+	font-size:13px;
+	color:#333333;
+	border-width: 1px;
+	border-color: #999999;
+	border-collapse: collapse;
+	width: 90%;
+}
+#hovertableHR th{
+	background:#b5cfd2 url('images/cell-blue.jpg');
+	border-width: 1px;
+	padding: 8px;
+	border-style: solid;
+	border-color: #999999;
+}
+#hovertableHR td{
+	background:#dcddc0 url('images/cell-grey.jpg');
+	border-width: 1px;
+	padding: 8px;
+	border-style: solid;
+	border-color: #999999;
+}
+
+
+
+
+#hovertable {
+	margin-left: auto;
+	margin-right: auto;
+	font-family: verdana,arial,sans-serif;
+	font-size:13px;
+	color:#333333;
+	border-width: 1px;
+	border-color: #999999;
+	border-collapse: collapse;
+	width: 80%;
+}
+#hovertable th{
+	background:#b5cfd2 url('images/cell-blue.jpg');
+	border-width: 1px;
+	padding: 8px;
+	border-style: solid;
+	border-color: #999999;
+}
+#hovertable td{
+	background:#dcddc0 url('images/cell-grey.jpg');
+	border-width: 1px;
+	padding: 8px;
+	border-style: solid;
+	border-color: #999999;
+}
+
+#cssmenuHomeRE ul{
+		margin-right: auto;
+	margin-left: auto;
+	padding:0;
+	border:1px solid #000000;
+	list-style-type:none;
+	position:relative;
+	display:block;
+	height:40px;
+	width:388px;
+	text-transform:uppercase;
+	font-size:13px;
+	
+
+	-moz-box-shadow:inset 0px 1px 0px 0px #947c94;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #947c94;
+	box-shadow:inset 0px 1px 0px 0px #947c94;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #d4b4d4), color-stop(1, #613361) );
+	background:-moz-linear-gradient( center top, #d4b4d4 5%, #613361 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#d4b4d4', endColorstr='#613361');
+	background-color:#d4b4d4;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	border:1px solid #a824a8;
+	
+	color:#ffffff;
+	}
+	
+#cssmenuHomeRE li{
+	display:block;
+	float:left;
+	margin-right: auto;
+	margin-left: auto;
+	padding:0;
+	border-right:1px solid #ffffff;
+	}
+	
+#cssmenuHomeRE li a{
+	display:block;
+	float:left;
+	color:#000080;
+	text-decoration:none;
+	padding:12px 20px 0 20px;
+	height:24px;
+	height:40px;
+	}
+#cssmenuHomeRE li a:hover{
+
+	background:transparent url('images/fade.jpg') repeat-x top left;	
+	}

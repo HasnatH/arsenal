@@ -1,0 +1,36 @@
+
+		var firstname = $('#firstname').val();
+		var url = $('#url').val();
+	 
+		$.ajax
+		({headers: { "Content-Type": "application/json", "Accept": "application/json" },
+			type: 'GET',
+			url: 'http://localhost/w1294947/index.php/find_json/findemp',
+			data: 'firstname='+firstname,
+			success: function(response)
+			{
+				$('#show').html(response);
+			}
+			else 
+			{
+				$('#show').append('Fail.');
+			}
+		});
+		
+			var url = $('#url').val();
+	$.getJSON('http://localhost/w1294947/index.php/find_json/findemp', function(data) 
+		{
+			var items = [];
+ 
+			$.each(data, function(key, val) 
+			{
+				items.push('<li id="' + key + '">' + val + '</li>');
+			});
+ 
+			$('<ul/>', 
+			{
+				'class': 'my-new-list',
+				html: items.join('')
+			})
+			.appendTo('body');
+		});
